@@ -1,0 +1,5 @@
+version: '2'
+services:
+  complexity:
+    build: .
+    command: xenon --ignore "tests" --max-absolute B --max-modules A --max-average A .
