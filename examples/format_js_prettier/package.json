@@ -1,0 +1,14 @@
+{
+  "name": "gazr_prettier",
+  "version": "1.0.0",
+  "description": "Format code for **Javascript** with **Prettier** & **Docker**",
+  "main": "app/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "prettier": "^1.10.2"
+  }
+}

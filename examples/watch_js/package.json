@@ -1,0 +1,14 @@
+{
+  "name": "gazr_watch",
+  "version": "1.0.0",
+  "description": "Run test with Nodemon",
+  "main": "app/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^1.14.11"
+  }
+}

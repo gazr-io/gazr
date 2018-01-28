@@ -1,0 +1,14 @@
+{
+  "name": "gazr_jest",
+  "version": "1.0.0",
+  "description": "Run test with Jest",
+  "main": "app/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^22.1.4"
+  }
+}

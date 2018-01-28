@@ -1,4 +1,4 @@
-Check code styling with **Python**, **Pylint** & **Docker** 
+Check code styling for **Python** with **Pylint** & **Docker** 
 
 **[See other examples](https://github.com/dailymotion/gazr/tree/master/examples)**
 

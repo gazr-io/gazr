@@ -1,4 +1,4 @@
-Check Complexity _(McCabe)_ with **Python**, **Xenon** & **Docker Compose** 
+Check Complexity _(McCabe)_ for **Python** with **Xenon** & **Docker Compose** 
 
 **[See other examples](https://github.com/dailymotion/gazr/tree/master/examples)**
 
