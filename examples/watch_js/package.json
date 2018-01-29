@@ -7,7 +7,7 @@
     "test": "jest"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "nodemon": "^1.14.11"
   }
