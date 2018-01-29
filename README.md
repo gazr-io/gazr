@@ -1,4 +1,4 @@
-![Gazr](images/github-landing.png)
+<a href="https://gazr.io">![Gazr](images/github-landing.png)</a>
 
 **gazr**, _pronounced "Gather"_, is an opinionated way to launch **common tasks** on your project. Know more on [https://gazr.io](https://gazr.io).
 
