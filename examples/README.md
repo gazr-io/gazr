@@ -3,10 +3,10 @@
 Implementation examples of the Gazr implementation, [described here](https://gazr.io).
 
 ```bash
-make checkstyle
+make style
 ```
-* [**Checkstyle:** Python with Pylint](./checkstyle_python_pylint)
-* [**Checkstyle:** Python with Pylint through Docker Compose](./checkstyle_python_pylint_with_docker_compose)
+* [**style:** Python with Pylint](./style_python_pylint)
+* [**style:** Python with Pylint through Docker Compose](./style_python_pylint_with_docker_compose)
 
 ```bash
 make complexity
@@ -15,7 +15,7 @@ make complexity
 * [**Complexity:** Python with Xenon through Docker Compose](./complexity_python_xenon_with_docker_compose)
 
 ```bash
-make fmt
+make format
 ```
 * [**Format:** Javascript with Prettier](./format_js_prettier)
 * [**Format:** Javascript with Prettier through Docker Compose](./format_js_prettier_with_docker_compose)

@@ -1,7 +1,7 @@
 Format code for **Javascript** with **Prettier** & **Docker**
 
 ```bash
-make fmt
+make format
 ```
 
 **Files:**

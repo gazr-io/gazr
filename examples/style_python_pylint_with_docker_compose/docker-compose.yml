@@ -1,5 +1,5 @@
 version: '2'
 services:
-  checkstyle:
+  style:
     build: .
     command: pylint app
