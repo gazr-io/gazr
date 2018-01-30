@@ -1,5 +1,5 @@
-.PHONY: fmt
-fmt:
+.PHONY: format
+format:
 	docker build -t gazr_js_prettier .
 	# Here with a share volume between the container and your laptop
 	docker run -it -v $(PWD)/app:/usr/src/app/app \

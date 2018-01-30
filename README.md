@@ -6,17 +6,44 @@
 
 ## Story
 
-Developers live in a technological world which is continuously changing.
-Project switching, technology switching, language switching, a big bunch of switching, don't it?
-At dailymotion, we take care of the mental health of our engineers, as they work on over 500+ repositories, developed with more than 50 technological stacks. Therefore we decided to re-think our way to deal with the complexity of our internal codebase.
+Developers live in a technological world which is rapidly evolving.
+With the move to microservices, they need to constantly switch between projects, technologies, programming languages, frameworks and more.
+At dailymotion, we care about the well being of our engineers, as they work over 500+ repositories, developed with more than 50 different technological stacks.
+gazr is an approach to deal with the complexity of our codebase.
 
 ## Foundation
 
 * A Container runtime as the only dependency on developer's laptop.  
 Docker provides a full integration with Mac, Windows & Linux (ubuntu).
-* Use generic task names to launch common actions.
-* Let developers use the technologies & libraries they want.
-* Simplify technical on-boarding.
-* Simplify switching between projects.
+* Using generic task names to launch common actions.
+* Letting developers use the technologies & libraries they want.
+* Simplifying technical on-boarding.
+* Simplifying switching between projects.
+
+## Tasks specification through Makefile
+
+```bash
+make style
+# Check lint, code styling rules. e.g. pylint, phpcs, eslint, style (java) etc ...
+
+make complexity
+# Cyclomatic complexity check (McCabe), radon (python), eslint (js), PHPMD, rules (scala) etc ...
+
+make format
+# Format code. e.g Prettier (js), format (golang)
+
+make test
+# Shortcut to launch function tests, integration tests and unit tests. pytest, jest (js), phpunit, JUnit (java) etc ...
+
+make test-unit
+make test-functional
+make test-integration
+
+make run
+# Locally run the application, e.g. node index.js, python -m myapp, go run myapp etc ...
+
+make watch
+# Hot reloading for development.
+```
 
 [More details on the website.](https://gazr.io)

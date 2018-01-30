@@ -1,3 +1,3 @@
-.PHONY: fmt
-fmt:
-	docker-compose run fmt
+.PHONY: format
+format:
+	docker-compose run format

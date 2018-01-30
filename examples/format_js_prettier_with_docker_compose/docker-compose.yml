@@ -1,6 +1,6 @@
 version: '2'
 services:
-  fmt:
+  format:
     build: .
     command: ./node_modules/.bin/prettier --write "app/**/*.js"
     volumes:
