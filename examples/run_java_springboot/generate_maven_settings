@@ -1,0 +1,18 @@
+#!/bin/sh
+[ -n "$PROXY_SERVER" ] && \
+[ -n "$PROXY_PORT" ] && \
+[ -n "$NO_PROXY" ] && \
+  cat <<EOT > settings.xml
+<settings>
+  <proxies>
+      <proxy>
+      <id>PROXY</id>
+      <active>true</active>
+      <protocol>http</protocol>
+      <host>${PROXY_SERVER}</host>
+      <port>${PROXY_PORT}</port>
+      <nonProxyHosts>${NO_PROXY}</nonProxyHosts>
+    </proxy>
+  </proxies>
+</settings>
+EOT
