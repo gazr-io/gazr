@@ -1,7 +1,5 @@
 #!/bin/sh
-[ -n "$PROXY_SERVER" ] && \
-[ -n "$PROXY_PORT" ] && \
-[ -n "$NO_PROXY" ] && \
+if [ -n "$PROXY_SERVER" ] && [ -n "$PROXY_PORT" ] && [ -n "$NO_PROXY" ]; then
   cat <<EOT > settings.xml
 <settings>
   <proxies>
@@ -16,3 +14,6 @@
   </proxies>
 </settings>
 EOT
+else
+  echo "<settings></settings>"  > settings.xml
+fi
