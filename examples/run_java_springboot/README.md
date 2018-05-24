@@ -1,10 +1,31 @@
-**Spring-Boot Java with maven** application
+## **Spring-Boot Java with maven** application
+
+gazr spec implementation status in this example
+
+- [ ] style
+- [ ] complexity
+- [x] format
+- [x] test
+- [ ] test-unit
+- [ ] test-functional
+- [ ] test-integration
+- [x] run
+- [ ] watch
+
+### Start the Spring boot unit tests.
 
 ```bash
 make test
 ```
 
-Start the Spring boot unit tests.
+
+### Format the code
+
+```bash
+make format
+```
+
+### Run the spring webapp
 
 ```bash
 make run

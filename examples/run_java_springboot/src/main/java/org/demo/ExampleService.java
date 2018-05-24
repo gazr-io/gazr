@@ -8,13 +8,12 @@ import org.springframework.web.bind.annotation.*;
 @EnableAutoConfiguration
 public class ExampleService {
 
-    @RequestMapping("/hello")
-    String home() {
-        return "Hello World!";
-    }
+  @RequestMapping("/hello")
+  String home() {
+    return "Hello World!";
+  }
 
-    public static void main(String[] args) throws Exception {
-        SpringApplication.run(ExampleService.class, args);
-    }
-
+  public static void main(String[] args) throws Exception {
+    SpringApplication.run(ExampleService.class, args);
+  }
 }
