@@ -5,6 +5,9 @@ WORKDIR /usr/src/app
 
 ENV PYTHONPATH=/usr/src/app/
 
+RUN pip install xenon
+RUN pip install pylint
+
 COPY . /usr/src/app
 
 CMD [ "python", "app/app.py" ]

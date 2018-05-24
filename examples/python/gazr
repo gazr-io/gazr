@@ -1,0 +1,25 @@
+#!/usr/bin/env sh
+
+CMD=$1
+
+
+case "$CMD" in
+  "run")
+    DOCKER_ARGS=''
+    ;;
+  "complexity")
+    DOCKER_ARGS='xenon --ignore "tests" --max-absolute B --max-modules A --max-average A .'
+    ;;
+  "style")
+    DOCKER_ARGS='pylint app'
+    ;;
+  *)
+    echo "unknown command $CMD, use `run` or `complexity`"
+    exit 1
+    ;;
+esac
+
+
+
+docker build -t gazr_python .
+docker run --rm gazr_python $DOCKER_ARGS
