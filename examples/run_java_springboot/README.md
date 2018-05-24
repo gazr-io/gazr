@@ -1,10 +1,16 @@
-Run **Spring-Boot Java with maven** application
+**Spring-Boot Java with maven** application
+
+```bash
+make test
+```
+
+Start the Spring boot unit tests.
 
 ```bash
 make run
 ```
 
-You can then access the webapp at http://localhost:8080
+You can then access the webapp at http://localhost:8080/hello
 
 **Files:**
 
