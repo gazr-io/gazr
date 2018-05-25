@@ -13,6 +13,9 @@ format: prepare
 style: prepare
 	mvn fmt:check
 
+complexity: prepare
+	mvn validate
+
 
 prepare:
 	./generate_maven_settings
@@ -23,5 +26,5 @@ prepare:
 		-v maven_cache:/root/.m2/repository \
 		-p 8080:8080 \
 		-w /app \
-		maven:slim mvn spring-boot:run"
+		maven:slim mvn"
 

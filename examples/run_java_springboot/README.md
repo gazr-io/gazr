@@ -3,7 +3,7 @@
 gazr spec implementation status in this example
 
 - [x] style
-- [ ] complexity
+- [x] complexity
 - [x] format
 - [x] test
 - [ ] test-unit
@@ -18,14 +18,19 @@ gazr spec implementation status in this example
 make test
 ```
 
-
-### Check the style of the code
+### Check the style of the code with fmt-maven-plugin
 
 ```bash
 make style
 ```
 
-### Format the code
+### Check the complexity of the code with checkstyle
+
+```bash
+make complexity
+```
+
+### Format the code with fmt-maven-plugin
 
 ```bash
 make format
