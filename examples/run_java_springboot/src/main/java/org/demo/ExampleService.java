@@ -13,6 +13,10 @@ public class ExampleService {
     return "Hello World!";
   }
 
+  String greet(String who){
+    return "Hello " + who + "!";
+  }
+
   public static void main(String[] args) throws Exception {
     SpringApplication.run(ExampleService.class, args);
   }

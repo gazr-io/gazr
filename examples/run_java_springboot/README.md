@@ -7,15 +7,30 @@ gazr spec implementation status in this example
 - [x] format
 - [x] test
 - [x] test-unit
-- [ ] test-functional
+- [x] test-functional
 - [ ] test-integration
 - [x] run
 - [x] watch
 
-### Start the Spring boot unit tests.
+### Start all tests.
 
 ```bash
 make test
+```
+
+Note : separation between unit and functional test is possible
+thanks to JUnit annotation `org.junit.experimental.categories.Category`.
+
+### Start only (fast) unit tests.
+
+```bash
+make test-unit
+```
+
+### Start only functional tests.
+
+```bash
+make test-functional
 ```
 
 ### Check the style of the code with fmt-maven-plugin

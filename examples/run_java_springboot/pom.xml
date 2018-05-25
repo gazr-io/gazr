@@ -46,6 +46,23 @@
     <build>
         <plugins>
             <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>unit</id>
+                        <configuration>
+                            <groups>org.demo.test.categories.UnitTests</groups>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>functional</id>
+                        <configuration>
+                            <groups>org.demo.test.categories.FunctionalTests</groups>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>com.coveo</groupId>
                 <artifactId>fmt-maven-plugin</artifactId>
                 <version>2.4.0</version>

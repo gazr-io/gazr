@@ -1,15 +1,19 @@
-.PHONY: run watch test-unit test format style complexity
+.PHONY: run watch test-unit test-functional test format style complexity
 
 
 run: watch
 
 watch: prepare
-	mvn spring-boot:run
+	mvn clean spring-boot:run
 
 test-unit: prepare
-	mvn test
+	mvn clean test-compile surefire:test@unit
 
-test: test-unit
+test-functional: prepare
+	mvn clean test-compile surefire:test@functional
+
+test: prepare
+	mvn clean test
 
 format: prepare
 	mvn fmt:format
