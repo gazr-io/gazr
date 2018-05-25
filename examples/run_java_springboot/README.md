@@ -6,7 +6,7 @@ gazr spec implementation status in this example
 - [x] complexity
 - [x] format
 - [x] test
-- [ ] test-unit
+- [x] test-unit
 - [ ] test-functional
 - [ ] test-integration
 - [x] run

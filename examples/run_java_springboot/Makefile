@@ -1,4 +1,4 @@
-.PHONY: run test format
+.PHONY: run watch test-unit test format style complexity
 
 
 run: watch
@@ -6,8 +6,10 @@ run: watch
 watch: prepare
 	mvn spring-boot:run
 
-test: prepare
+test-unit: prepare
 	mvn test
+
+test: test-unit
 
 format: prepare
 	mvn fmt:format
