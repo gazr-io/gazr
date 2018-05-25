@@ -10,7 +10,7 @@ gazr spec implementation status in this example
 - [ ] test-functional
 - [ ] test-integration
 - [x] run
-- [ ] watch
+- [x] watch
 
 ### Start the Spring boot unit tests.
 
@@ -36,13 +36,23 @@ make complexity
 make format
 ```
 
-### Run the spring webapp
+### Run the spring webapp (watching changes with spring-boot-devtools)
 
 ```bash
 make run
 ```
 
+or
+
+```bash
+make watch
+```
+
 You can then access the webapp at http://localhost:8080/hello
+
+If for instance you change some content in `ExampleService.java` and
+recompile in your IDE, the change is seen live in the browser as
+soon as you refresh the page.
 
 **Files:**
 

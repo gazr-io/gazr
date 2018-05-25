@@ -1,7 +1,9 @@
 .PHONY: run test format
 
 
-run: prepare
+run: watch
+
+watch: prepare
 	mvn spring-boot:run
 
 test: prepare
