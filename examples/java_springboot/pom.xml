@@ -58,7 +58,7 @@
                         <id>functional</id>
                         <configuration>
                             <groups>org.demo.test.categories.FunctionalTests</groups>
-                        </configuration>
+   l                     </configuration>
                     </execution>
                 </executions>
             </plugin>
