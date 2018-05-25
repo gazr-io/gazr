@@ -10,6 +10,9 @@ test: prepare
 format: prepare
 	mvn fmt:format
 
+style: prepare
+	mvn fmt:check
+
 
 prepare:
 	./generate_maven_settings

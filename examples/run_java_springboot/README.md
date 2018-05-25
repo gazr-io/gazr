@@ -2,7 +2,7 @@
 
 gazr spec implementation status in this example
 
-- [ ] style
+- [x] style
 - [ ] complexity
 - [x] format
 - [x] test
@@ -18,6 +18,12 @@ gazr spec implementation status in this example
 make test
 ```
 
+
+### Check the style of the code
+
+```bash
+make style
+```
 
 ### Format the code
 
