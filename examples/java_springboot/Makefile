@@ -3,7 +3,7 @@
 
 run: watch
 
-watch: prepare
+watch: prepare startDB
 	mvn clean spring-boot:run
 
 test-unit: prepare
@@ -36,3 +36,12 @@ prepare:
 		-w /app \
 		maven:slim mvn"
 
+
+startDB:
+	docker run --rm \
+		-d \
+		-e POSTGRES_DB=testdb \
+		-e POSTGRES_PASSWORD=pass \
+		-e POSTGRES_USER=dbuser \
+		-p 5432:5432 \
+		postgres:alpine
