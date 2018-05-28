@@ -3,8 +3,8 @@
 
 run: watch
 
-watch: prepare startDB
-	mvn clean spring-boot:run
+watch: prepare
+	docker-compose up
 
 test-unit: prepare
 	mvn clean test-compile surefire:test@unit
@@ -27,21 +27,4 @@ complexity: prepare
 
 prepare:
 	./generate_maven_settings
-	alias mvn="docker run --rm \
-		-v `pwd`/src:/app/src \
-		-v `pwd`/pom.xml:/app/pom.xml \
-		-v `pwd`/settings.xml:/root/.m2/settings.xml \
-		-v maven_cache:/root/.m2/repository \
-		-p 8080:8080 \
-		-w /app \
-		maven:slim mvn"
-
-
-startDB:
-	docker run --rm \
-		-d \
-		-e POSTGRES_DB=testdb \
-		-e POSTGRES_PASSWORD=pass \
-		-e POSTGRES_USER=dbuser \
-		-p 5432:5432 \
-		postgres:alpine
+	alias mvn="docker-compose run web mvn"

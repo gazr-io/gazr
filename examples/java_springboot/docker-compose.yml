@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  web:
+    image: "maven:slim"
+    ports:
+     - "8080:8080"
+    volumes:
+     - ./src:/app/src
+     - ./pom.xml:/app/pom.xml
+     - ./checkstyle.xml:/app/checkstyle.xml
+     - ./settings.xml:/root/.m2/settings.xml
+     - maven_cache:/root/.m2/repository
+    working_dir: /app
+    command: mvn spring-boot:run
+
+  db:
+    image: "postgres:alpine"
+    ports:
+     - "5432:5432"
+    environment:
+      - POSTGRES_DB=testdb
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_USER=dbuser
+
+volumes:
+  maven_cache:

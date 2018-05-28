@@ -14,7 +14,7 @@ public class ExampleService {
     return "Hello World!";
   }
 
-  String greet(String who){
+  String greet(String who) {
     return "Hello " + who + "!";
   }
 
