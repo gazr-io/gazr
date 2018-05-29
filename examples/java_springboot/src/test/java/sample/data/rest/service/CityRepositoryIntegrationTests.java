@@ -16,6 +16,8 @@
 
 package sample.data.rest.service;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import org.demo.test.categories.IntegrationTests;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
@@ -26,8 +28,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.junit4.SpringRunner;
 import sample.data.rest.domain.City;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Integration tests for {@link CityRepository}.

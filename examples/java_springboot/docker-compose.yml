@@ -1,18 +1,6 @@
 version: '3'
 
 services:
-  maven:
-    image: "maven:slim"
-    ports:
-     - "8080:8080"
-    volumes:
-     - ./src:/app/src
-     - ./pom.xml:/app/pom.xml
-     - ./checkstyle.xml:/app/checkstyle.xml
-     - ./settings.xml:/root/.m2/settings.xml
-     - maven_cache:/root/.m2/repository
-    working_dir: /app
-
   web:
     image: "maven:slim"
     ports:
@@ -25,8 +13,7 @@ services:
      - maven_cache:/root/.m2/repository
     working_dir: /app
     command: mvn spring-boot:run
-    depends_on:
-     - "db"
+
 
   db:
     image: "postgres:alpine"

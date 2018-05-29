@@ -88,19 +88,20 @@
                         <id>unit</id>
                         <configuration>
                             <groups>org.demo.test.categories.UnitTests</groups>
+                            <argLine>-Dspring.profiles.active=embedded</argLine>
                         </configuration>
                     </execution>
                     <execution>
                         <id>functional</id>
                         <configuration>
                             <groups>org.demo.test.categories.FunctionalTests</groups>
+                            <argLine>-Dspring.profiles.active=embedded</argLine>
                         </configuration>
                     </execution>
                     <execution>
                         <id>integration</id>
                         <configuration>
                             <groups>org.demo.test.categories.IntegrationTests</groups>
-                            <argLine>-Dspring.profiles.active=it</argLine>
                         </configuration>
                     </execution>
                 </executions>

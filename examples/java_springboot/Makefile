@@ -7,10 +7,10 @@ watch: prepare
 	docker-compose up web db
 
 test-unit: prepare
-	mvn clean test-compile surefire:test@unit
+	docker-compose run web mvn clean test-compile surefire:test@unit
 
 test-functional: prepare
-	mvn clean test-compile surefire:test@functional
+	docker-compose run web mvn clean test-compile surefire:test@functional
 
 test-integration: prepare
 	docker-compose start db
@@ -18,18 +18,21 @@ test-integration: prepare
 	docker-compose stop db
 
 test: prepare
-	mvn clean test
+	docker-compose start db
+	docker-compose run web mvn test
+	docker-compose stop db
 
 format: prepare
-	mvn fmt:format
+	docker-compose run web mvn fmt:format
 
 style: prepare
-	mvn fmt:check
+	docker-compose run web mvn fmt:check
 
 complexity: prepare
-	mvn validate
+	docker-compose run web mvn validate
+
+all: style format complexity test-unit test-functional test-integration test run
 
 
 prepare:
 	./generate_maven_settings
-	alias mvn="docker-compose run maven mvn"
