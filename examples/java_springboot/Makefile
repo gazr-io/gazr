@@ -4,7 +4,7 @@
 run: watch
 
 watch: prepare
-	docker-compose up
+	docker-compose up web db
 
 test-unit: prepare
 	mvn clean test-compile surefire:test@unit
@@ -13,7 +13,9 @@ test-functional: prepare
 	mvn clean test-compile surefire:test@functional
 
 test-integration: prepare
+	docker-compose start db
 	docker-compose run web mvn clean test-compile surefire:test@integration
+	docker-compose stop db
 
 test: prepare
 	mvn clean test
