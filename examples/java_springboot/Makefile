@@ -12,6 +12,9 @@ test-unit: prepare
 test-functional: prepare
 	mvn clean test-compile surefire:test@functional
 
+test-integration: prepare
+	docker-compose run web mvn clean test-compile surefire:test@integration
+
 test: prepare
 	mvn clean test
 
@@ -27,4 +30,4 @@ complexity: prepare
 
 prepare:
 	./generate_maven_settings
-	alias mvn="docker-compose run web mvn"
+	alias mvn="docker-compose run maven mvn"

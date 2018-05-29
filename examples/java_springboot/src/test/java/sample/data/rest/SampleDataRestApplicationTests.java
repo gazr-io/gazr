@@ -16,23 +16,22 @@
 
 package sample.data.rest;
 
-import static org.hamcrest.Matchers.containsString;
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.hasSize;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
+import org.demo.test.categories.IntegrationTests;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
+
+import static org.hamcrest.Matchers.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 /**
  * Integration test to run the application.
@@ -41,8 +40,8 @@ import org.springframework.web.context.WebApplicationContext;
  * @author Andy Wilkinson
  */
 @RunWith(SpringRunner.class)
+@Category(IntegrationTests.class)
 @SpringBootTest
-// Separate profile for web tests to avoid clashing databases
 public class SampleDataRestApplicationTests {
 
   @Autowired private WebApplicationContext context;
@@ -57,7 +56,7 @@ public class SampleDataRestApplicationTests {
   @Test
   public void testHome() throws Exception {
     this.mvc
-        .perform(get("/api"))
+        .perform(get("/"))
         .andExpect(status().isOk())
         .andExpect(content().string(containsString("hotels")));
   }
@@ -67,7 +66,7 @@ public class SampleDataRestApplicationTests {
     this.mvc
         .perform(
             get(
-                "/api/cities/search/findByNameAndCountryAllIgnoringCase?name=Melbourne&country=Australia"))
+                "/cities/search/findByNameAndCountryAllIgnoringCase?name=Melbourne&country=Australia"))
         .andExpect(status().isOk())
         .andExpect(jsonPath("state", equalTo("Victoria")))
         .andExpect(jsonPath("name", equalTo("Melbourne")));
@@ -78,7 +77,7 @@ public class SampleDataRestApplicationTests {
     this.mvc
         .perform(
             get(
-                "/api/cities/search/findByNameContainingAndCountryContainingAllIgnoringCase?name=&country=UK"))
+                "/cities/search/findByNameContainingAndCountryContainingAllIgnoringCase?name=&country=UK"))
         .andExpect(status().isOk())
         .andExpect(jsonPath("_embedded.cities", hasSize(3)));
   }
