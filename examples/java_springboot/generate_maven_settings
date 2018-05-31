@@ -1,5 +1,6 @@
 #!/bin/sh
 if [ -n "$PROXY_SERVER" ] && [ -n "$PROXY_PORT" ] && [ -n "$NO_PROXY" ]; then
+  echo "generating settings.xml for $PROXY_SERVER:$PROXY_PORT ($NO_PROXY)"
   cat <<EOT > settings.xml
 <settings>
   <proxies>
@@ -15,5 +16,6 @@ if [ -n "$PROXY_SERVER" ] && [ -n "$PROXY_PORT" ] && [ -n "$NO_PROXY" ]; then
 </settings>
 EOT
 else
+  echo "using empty settings.xml"
   echo "<settings></settings>"  > settings.xml
 fi
