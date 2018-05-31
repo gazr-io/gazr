@@ -1,4 +1,4 @@
-.PHONY: run watch test-unit test-functional test-integration test format style complexityall prepare
+.PHONY: run watch test-unit test-functional test-integration test format style complexity all prepare
 
 
 run: watch
