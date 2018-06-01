@@ -1,4 +1,3 @@
 package org.demo.test.categories;
 
-public class UnitTests {
-}
+public class UnitTests {}

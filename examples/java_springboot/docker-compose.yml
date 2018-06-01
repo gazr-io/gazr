@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  web:
+    image: "maven:alpine"
+    ports:
+     - "8080:8080"
+    volumes:
+     - ./src:/app/src
+     - ./pom.xml:/app/pom.xml
+     - ./wait-for:/app/wait-for
+     - ./checkstyle.xml:/app/checkstyle.xml
+     - ./settings.xml:/root/.m2/settings.xml
+     - maven_cache:/root/.m2/repository
+    working_dir: /app
+    command: ./wait-for db:5432 -- mvn spring-boot:run
+
+
+  db:
+    image: "postgres:alpine"
+    environment:
+      - POSTGRES_DB=testdb
+      - POSTGRES_PASSWORD=pass
+      - POSTGRES_USER=dbuser
+
+volumes:
+  maven_cache:

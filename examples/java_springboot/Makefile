@@ -1,47 +1,38 @@
-.PHONY: run watch test-unit test-functional test format style complexity
+.PHONY: run watch test-unit test-functional test-integration test format style complexity all prepare
 
 
 run: watch
 
-watch: prepare startDB
-	mvn clean spring-boot:run
+watch: prepare
+	docker-compose up web db
 
 test-unit: prepare
-	mvn clean test-compile surefire:test@unit
+	docker-compose run web mvn clean test-compile surefire:test@unit
 
 test-functional: prepare
-	mvn clean test-compile surefire:test@functional
+	docker-compose run web mvn clean test-compile surefire:test@functional
+
+test-integration: prepare
+	docker-compose start db
+	docker-compose run web mvn clean test-compile surefire:test@integration
+	docker-compose stop db
 
 test: prepare
-	mvn clean test
+	docker-compose start db
+	docker-compose run web mvn test
+	docker-compose stop db
 
 format: prepare
-	mvn fmt:format
+	docker-compose run web mvn fmt:format
 
 style: prepare
-	mvn fmt:check
+	docker-compose run web mvn fmt:check
 
 complexity: prepare
-	mvn validate
+	docker-compose run web mvn validate
+
+all: style format complexity test-unit test-functional test-integration test run
 
 
 prepare:
 	./generate_maven_settings
-	alias mvn="docker run --rm \
-		-v `pwd`/src:/app/src \
-		-v `pwd`/pom.xml:/app/pom.xml \
-		-v `pwd`/settings.xml:/root/.m2/settings.xml \
-		-v maven_cache:/root/.m2/repository \
-		-p 8080:8080 \
-		-w /app \
-		maven:slim mvn"
-
-
-startDB:
-	docker run --rm \
-		-d \
-		-e POSTGRES_DB=testdb \
-		-e POSTGRES_PASSWORD=pass \
-		-e POSTGRES_USER=dbuser \
-		-p 5432:5432 \
-		postgres:alpine
