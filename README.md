@@ -36,11 +36,19 @@ make format
 # Format code. e.g Prettier (js), format (golang)
 
 make test
-# Shortcut to launch function tests, integration tests and unit tests. pytest, jest (js), phpunit, JUnit (java) etc ...
+# Shortcut to launch all the test tasks (unit, functional and integration)
 
 make test-unit
+# launch unit tests. e.g. pytest, jest, phpunit, JUnit etc...
+
 make test-functional
+# launch functional tests. e.g behat, JBehave, Behave, CucumberJS, Cucumber etc...
+
 make test-integration
+# launch integration tests. e.g pytest, jest, phpunit etc...
+
+make security-sast
+# launch static application security testing (SAST). e.g Gosec, bandit, Flawfinder, NodeJSScan, phpcs-security-audit, brakeman.
 
 make run
 # Locally run the application, e.g. node index.js, python -m myapp, go run myapp etc ...
