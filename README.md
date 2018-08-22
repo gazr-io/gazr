@@ -44,6 +44,9 @@ make run
 
 make watch
 # Hot reloading for development.
+
+make build
+# Build the application
 ```
 
 [More details on the website.](https://gazr.io)
