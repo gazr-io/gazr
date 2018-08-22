@@ -24,7 +24,7 @@ Docker provides a full integration with Mac, Windows & Linux (ubuntu).
 
 ```bash
 make init
-# Bootstrap your application (fetch some data files, restore a shared volume, make some API calls, request user input etc...
+# Bootstrap your application (fetch some data files, make some API calls, request user input etc...)
 
 make style
 # Check lint, code styling rules. e.g. pylint, phpcs, eslint, style (java) etc ...
