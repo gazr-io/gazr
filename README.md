@@ -47,8 +47,14 @@ make test-functional
 make test-integration
 # launch integration tests. e.g pytest, jest, phpunit etc...
 
+make security
+# Shortcut to launch all the security tasks (security-sast, security-dependency-scan)
+
 make security-sast
 # launch static application security testing (SAST). e.g Gosec, bandit, Flawfinder, NodeJSScan, phpcs-security-audit, brakeman.
+
+make security-dependency-scan
+# launch a dependency scanning to trigger know vulnerabilities. e.g Retire.js, gemnasium, bundler-audit.
 
 make run
 # Locally run the application, e.g. node index.js, python -m myapp, go run myapp etc ...
