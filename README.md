@@ -47,6 +47,9 @@ make test-functional
 make test-integration
 # launch integration tests. e.g pytest, jest, phpunit etc...
 
+make profile
+# launch profiling scenarios and generate reports (raw data, callgraphes, ...). e.g CProfile, Valgrind, XHProf, Gprof etc ...
+
 make security
 # Shortcut to launch all the security tasks (security-sast, security-dependency-scan)
 
