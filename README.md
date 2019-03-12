@@ -56,6 +56,9 @@ make security-sast
 make security-dependency-scan
 # launch a dependency scanning to trigger know vulnerabilities. e.g Retire.js, gemnasium, bundler-audit.
 
+make update
+# update data according the current version of code (data them self have to know against which latest version code used)
+
 make run
 # Locally run the application, e.g. node index.js, python -m myapp, go run myapp etc ...
 
