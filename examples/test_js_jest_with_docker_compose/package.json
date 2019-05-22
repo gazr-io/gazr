@@ -6,10 +6,9 @@
     "scripts": {
       "test": "jest"
     },
-    "author": "",
     "license": "MIT",
     "devDependencies": {
-      "jest": "^22.1.4"
+      "jest": "^24.8.0"
     }
   }
   
