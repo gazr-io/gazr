@@ -8,8 +8,10 @@
 
 Developers live in a technological world which is rapidly evolving.
 With the move to microservices, they need to constantly switch between projects, technologies, programming languages, frameworks and more.
-At dailymotion, we care about the well being of our engineers, as they work over 500+ repositories, developed with more than 50 different technological stacks.
-gazr is an approach to deal with the complexity of our codebase.
+
+### Dailymotion one
+At dailymotion, they care about the well being of their engineers, as they work over 500+ repositories, developed with more than 50 different technological stacks.
+Gazr is an approach to deal with the complexity of their codebase.
 
 ## Foundation
 
